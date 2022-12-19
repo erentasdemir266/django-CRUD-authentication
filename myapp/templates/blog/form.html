@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Form Sayfası{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Form</h1><br>
+            {{form|crispy}}
+            {{form.media}}
+         <input type="submit"class="btn btn-primary" value="Gönder">
+    </form>
+</div>
+{% endblock %}
